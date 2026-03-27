@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مجموعة منتقاة من أفضل البرومبتات العربية للذكاء الاصطناعي للأعمال — خدمة العملاء، جوجل بزنس، المطاعم، العيادات، الموارد البشرية، وسائل التواصل">
+  <meta name="keywords" content="برومبت عربي, ذكاء اصطناعي, ChatGPT عربي, Claude عربي, prompt engineering, arabic AI prompts, خليج, سعودية">
+  <title>البرومبتات العربية للذكاء الاصطناعي | Arabic AI Prompts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --accent: #f0883e;
+      --accent2: #d29922;
+      --green: #3fb950;
+      --blue: #58a6ff;
+      --purple: #bc8cff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #0d1117;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: linear-gradient(180deg, rgba(240,136,62,0.08) 0%, transparent 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(240,136,62,0.15);
+      border: 1px solid rgba(240,136,62,0.4);
+      color: var(--accent);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text2);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text2);
+      margin-top: 0.2rem;
+    }
+
+    /* MAIN */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* CATEGORIES NAV */
+    .categories-nav {
+      display: flex;
+      gap: 0.7rem;
+      padding: 2rem 0;
+      overflow-x: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cat-btn {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0d1117;
+      font-weight: 700;
+    }
+
+    /* SECTION */
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-icon {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .section-count {
+      background: var(--bg3);
+      color: var(--text2);
+      padding: 0.2rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-right: auto;
+    }
+
+    /* PROMPT CARD */
+    .prompt-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .prompt-card:hover {
+      border-color: var(--accent);
+    }
+
+    .prompt-header {
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .prompt-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .prompt-toggle {
+      color: var(--text2);
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .prompt-card.open .prompt-toggle {
+      transform: rotate(180deg);
+    }
+
+    .prompt-body {
+      display: none;
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .prompt-card.open .prompt-body {
+      display: block;
+    }
+
+    .prompt-text {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      font-family: 'Cairo', monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      position: relative;
+      direction: rtl;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 0.7rem;
+      left: 0.7rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: #0d1117;
+    }
+
+    .prompt-meta {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.3);
+      color: var(--blue);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(240,136,62,0.12) 0%, rgba(188,140,255,0.08) 100%);
+      border: 1px solid rgba(240,136,62,0.3);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .cta-section h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: var(--text2);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #0d1117;
+      padding: 0.9rem 2.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(240,136,62,0.3);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(240,136,62,0.4);
+    }
+
+    .cta-features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text2);
+      font-size: 0.9rem;
+    }
+
+    .cta-feature::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 3rem 1rem 2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .container { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">🤖 برومبتات عربية</div>
+  <a href="https://bayenai.com" class="nav-cta" target="_blank" rel="nofollow">Bayen AI ←</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">🆓 مجاني ومفتوح المصدر</div>
+  <h1>أفضل <span>البرومبتات العربية</span><br>للذكاء الاصطناعي</h1>
+  <p>مجموعة منتقاة ومُجرَّبة من البرومبتات الجاهزة لاستخدام ChatGPT وClaude وGemini في أعمالك اليومية</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">14+</div>
+      <div class="stat-label">برومبت جاهز</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">قطاعات أعمال</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">عربي ومجاني</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="categories-nav">
+    <button class="cat-btn active" onclick="scrollTo('customer')">🎧 خدمة العملاء</button>
+    <button class="cat-btn" onclick="scrollTo('gbp')">📍 جوجل بزنس</button>
+    <button class="cat-btn" onclick="scrollTo('clinic')">🏥 العيادات</button>
+    <button class="cat-btn" onclick="scrollTo('restaurant')">🍽️ المطاعم</button>
+    <button class="cat-btn" onclick="scrollTo('hr')">👥 الموارد البشرية</button>
+    <button class="cat-btn" onclick="scrollTo('social')">📱 السوشيال ميديا</button>
+  </div>
+
+  <!-- CUSTOMER SERVICE -->
+  <div class="section" id="customer">
+    <div class="section-header">
+      <div class="section-icon">🎧</div>
+      <div class="section-title">خدمة العملاء</div>
+      <div class="section-count">3 برومبتات</div>
+    </div>
+
+    <div class="prompt-card open">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">الرد على الشكاوى باحترافية</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p1">أنت موظف خدمة عملاء محترف في شركة [اسم الشركة] في [المدينة/الدولة].
+تلقيت الشكوى التالية من العميل: "[نص الشكوى]"
+
+قم بـ:
+1. الاعتذار بصدق وتعاطف دون قبول المسؤولية القانونية
+2. شكر العميل على تواصله
+3. تقديم حل عملي واضح مع جدول زمني
+4. تقديم تعويض مناسب إن لزم
+5. إنهاء الرسالة بطريقة تُعزز الثقة
+
+اكتب الرد بلغة عربية فصيحة مهذبة، لا تتجاوز 150 كلمة.<button class="copy-btn" onclick="copyText('p1', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">خدمة عملاء</span>
+          <span class="tag">شكاوى</span>
+          <span class="tag">متوسط</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">تصعيد وتصنيف شكاوى العملاء</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p2">لديك نظام دعم عملاء. استلمت الرسائل التالية من العملاء:
+[الصق الرسائل هنا]
+
+صنّف كل رسالة حسب:
+- الأولوية: (عاجل / متوسط / منخفض)
+- النوع: (شكوى / استفسار / طلب استرداد / اقتراح)
+- القسم المسؤول: (تقني / مالي / توصيل / جودة المنتج)
+- اقتراح الرد الأولي (جملة واحدة)
+
+أخرج النتيجة في جدول منظم.<button class="copy-btn" onclick="copyText('p2', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">تصنيف</span>
+          <span class="tag">أتمتة</span>
+          <span class="tag">سهل</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">قاعدة معرفة للأسئلة الشائعة</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p3">أنت مسؤول عن إنشاء قاعدة معرفة لـ [اسم الشركة] في قطاع [القطاع].
+
+بناءً على هذه القائمة من شكاوى العملاء الشائعة:
+[الصق الشكاوى هنا]
+
+اكتب 10 إجابات جاهزة بالعربية لأكثر الأسئلة تكراراً، مع:
+- صياغة واضحة ومباشرة
+- نبرة ودية ومهنية
+- خطوات عملية قابلة للتنفيذ
+- إضافة جملة ختامية تدعو للتواصل المباشر<button class="copy-btn" onclick="copyText('p3', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">FAQ</span>
+          <span class="tag">قاعدة معرفة</span>
+          <span class="tag">متقدم</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOOGLE BUSINESS -->
+  <div class="section" id="gbp">
+    <div class="section-header">
+      <div class="section-icon">📍</div>
+      <div class="section-title">جوجل بزنس</div>
+      <div class="section-count">2 برومبتات</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">وصف احترافي للنشاط التجاري</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p4">اكتب وصفاً احترافياً لنشاط تجاري بالعربية لرفعه على Google Business Profile.
+
+معلومات النشاط:
+- الاسم: [اسم النشاط]
+- القطاع: [المجال]
+- الموقع: [المدينة، الدولة]
+- خدماتنا الرئيسية: [الخدمات]
+- ما يميزنا: [نقاط التميز]
+
+المتطلبات:
+- الطول: 250-750 حرف
+- ضمّن 3-5 كلمات مفتاحية طبيعياً
+- ابدأ بجملة قوية تجذب الانتباه
+- اختم بدعوة واضحة للتصرف (CTA)
+- لا تستخدم كلمات مبالغ فيها أو وعود غير واقعية<button class="copy-btn" onclick="copyText('p4', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">SEO</span>
+          <span class="tag">جوجل</span>
+          <span class="tag">محلي</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">الرد على تقييمات جوجل</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p5">أنت مدير [نشاط تجاري] في [المدينة]. اكتب ردوداً على التقييمات التالية:
+
+التقييم 1 (5 نجوم): "[نص التقييم الإيجابي]"
+التقييم 2 (2 نجوم): "[نص التقييم السلبي]"
+التقييم 3 (4 نجوم): "[نص التقييم المتوسط]"
+
+لكل رد:
+- اجعله فريداً (لا تكرر نفس القالب)
+- اذكر اسم العميل إن وُجد
+- للإيجابية: شكر حار + دعوة للعودة
+- للسلبية: اعتذار + حل + دعوة للتواصل الخاص
+- الطول المثالي: 50-80 كلمة
+- نبرة: احترافية وودية<button class="copy-btn" onclick="copyText('p5', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">تقييمات</span>
+          <span class="tag">سمعة</span>
+          <span class="tag">SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLINICS -->
+  <div class="section" id="clinic">
+    <div class="section-header">
+      <div class="section-icon">🏥</div>
+      <div class="section-title">العيادات الطبية</div>
+      <div class="section-count">2 برومبتات</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">تذكير المرضى بالمواعيد (WhatsApp)</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p6">أنت مساعد إداري في [اسم العيادة/المستشفى]. اكتب رسالة WhatsApp لتذكير المرضى بمواعيدهم.
+
+تفاصيل الموعد:
+- اسم المريض: [الاسم]
+- الطبيب: [د. الاسم] - [التخصص]
+- التاريخ والوقت: [التاريخ] الساعة [الوقت]
+- نوع الزيارة: (متابعة / كشف أول / إجراء)
+
+المتطلبات:
+- رسالة قصيرة لا تتجاوز 5 أسطر
+- نبرة محترمة ودافئة
+- أضف تعليمات ما قبل الزيارة إن كانت ضرورية
+- أنهِ بطلب التأكيد (رد بـ "نعم" للتأكيد)
+- أضف رقم للتواصل في حال الإلغاء<button class="copy-btn" onclick="copyText('p6', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">واتساب</span>
+          <span class="tag">صحة</span>
+          <span class="tag">أتمتة</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">محتوى توعوي طبي لوسائل التواصل</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p7">أنت طبيب [التخصص] في [المدينة]. اكتب 5 منشورات توعوية قصيرة لانستغرام/تويتر عن [موضوع طبي].
+
+لكل منشور:
+- الطول: 100-150 كلمة
+- ابدأ بحقيقة مفاجئة أو سؤال يثير الاهتمام
+- قدم معلومة طبية دقيقة ومبسّطة
+- أضف نصيحة عملية قابلة للتطبيق
+- اختم بـ hashtags عربية وإنجليزية مناسبة (5-7 وسوم)
+- نبرة: علمية لكن مفهومة للعموم
+- لا تتضمن أي دعاية مباشرة للعيادة<button class="copy-btn" onclick="copyText('p7', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">توعية</span>
+          <span class="tag">انستغرام</span>
+          <span class="tag">طب</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTS -->
+  <div class="section" id="restaurant">
+    <div class="section-header">
+      <div class="section-icon">🍽️</div>
+      <div class="section-title">المطاعم</div>
+      <div class="section-count">2 برومبتات</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">كتابة قائمة طعام جذابة</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p8">أنت كاتب محتوى متخصص في صناعة الأغذية. اكتب أوصافاً جذابة لقائمة الطعام لـ [اسم المطعم].
+
+الأطباق:
+1. [اسم الطبق]: المكونات الرئيسية: [المكونات]
+2. [اسم الطبق]: المكونات الرئيسية: [المكونات]
+3. [اسم الطبق]: المكونات الرئيسية: [المكونات]
+
+لكل طبق:
+- وصف شهي يثير الشهية (40-60 كلمة)
+- أبرز المكونات الفريدة أو المحلية
+- اذكر الحساسيات الغذائية إن وُجدت (جلوتين، مكسرات، ألبان)
+- استخدم كلمات حسية (مقرمش، دسم، طازج، بطيء الطهي...)<button class="copy-btn" onclick="copyText('p8', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">F&B</span>
+          <span class="tag">قائمة</span>
+          <span class="tag">تسويق</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">حملة تسويقية لعروض المطعم</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p9">اكتب حملة تسويقية متكاملة على وسائل التواصل لعرض [اسم العرض] في [اسم المطعم].
+
+تفاصيل العرض:
+- الأطباق المشمولة: [الأطباق]
+- مدة العرض: [من - إلى]
+- السعر/الخصم: [التفاصيل]
+- الجمهور المستهدف: [الفئة]
+
+المطلوب:
+1. منشور انستغرام (مع كابشن + هاشتاقات)
+2. ستوري انستغرام (جملتان + CTA)
+3. رسالة WhatsApp للعملاء المسجلين
+4. تغريدة X (تويتر)
+
+أسلوب: حماسي، يثير الشهية، يخلق إلحاحية (FOMO).<button class="copy-btn" onclick="copyText('p9', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">حملات</span>
+          <span class="tag">عروض</span>
+          <span class="tag">متكامل</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HR -->
+  <div class="section" id="hr">
+    <div class="section-header">
+      <div class="section-icon">👥</div>
+      <div class="section-title">الموارد البشرية</div>
+      <div class="section-count">2 برومبتات</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">كتابة إعلانات الوظائف</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p10">أنت مدير موارد بشرية في [اسم الشركة]. اكتب إعلان وظيفة احترافي وجذاب.
+
+المعلومات:
+- المسمى الوظيفي: [المسمى]
+- القسم: [القسم]
+- نوع العمل: (دوام كامل / جزئي / عن بُعد / هجين)
+- المدينة: [المدينة]
+- المتطلبات الأساسية: [المتطلبات]
+- المهام الرئيسية: [المهام]
+- المميزات: [المزايا]
+
+المطلوب:
+- عنوان جذاب يثير الاهتمام
+- وصف الشركة والبيئة (50 كلمة)
+- المهام والمسؤوليات (قائمة نقطية)
+- المتطلبات (إلزامية + مُفضَّلة)
+- ما يميز العمل معنا
+- طريقة التقديم وآخر موعد<button class="copy-btn" onclick="copyText('p10', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">توظيف</span>
+          <span class="tag">HR</span>
+          <span class="tag">لينكدإن</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">تقييم الأداء الوظيفي السنوي</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p11">أنت مدير قسم. اكتب تقرير تقييم أداء سنوي للموظف التالي:
+
+معلومات الموظف:
+- الاسم: [الاسم] | المسمى: [المسمى]
+- فترة التقييم: [الفترة]
+- الإنجازات الموثقة: [الإنجازات]
+- نقاط التحسين الملاحظة: [الملاحظات]
+- الأهداف المحددة مسبقاً: [الأهداف]
+- نسبة تحقق الأهداف: [النسبة]%
+
+المطلوب:
+- ملخص تنفيذي (100 كلمة)
+- تقييم كل محور (القيادة، التعاون، الإنتاجية، الالتزام) من 5
+- أبرز الإنجازات
+- مجالات التطوير مع خطة عمل
+- أهداف العام القادم (SMART)
+نبرة: بنّاءة ومحفِّزة.<button class="copy-btn" onclick="copyText('p11', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">تقييم</span>
+          <span class="tag">أداء</span>
+          <span class="tag">HR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="section" id="social">
+    <div class="section-header">
+      <div class="section-icon">📱</div>
+      <div class="section-title">وسائل التواصل الاجتماعي</div>
+      <div class="section-count">3 برومبتات</div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">خطة محتوى شهرية كاملة</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p12">أنت مدير وسائل تواصل اجتماعي. ضع خطة محتوى لشهر كامل.
+
+المعلومات:
+- النشاط/الشركة: [النشاط] في قطاع [القطاع]
+- المنصات: [انستغرام / تويتر X / لينكدإن / تيك توك]
+- الجمهور المستهدف: [وصف الجمهور]
+- الأهداف: [التوعية / المبيعات / التفاعل]
+- التكرار المطلوب: [عدد المنشورات أسبوعياً]
+- المناسبات في الشهر: [المناسبات]
+
+المطلوب:
+- جدول أسبوعي (30 يوم)
+- لكل يوم: نوع المحتوى + الفكرة الرئيسية + المنصة
+- توزيع: 40% تعليمي، 30% ترفيهي، 20% ترويجي، 10% تفاعلي
+- قائمة بـ 10 هاشتاقات مناسبة للقطاع<button class="copy-btn" onclick="copyText('p12', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">خطة</span>
+          <span class="tag">محتوى</span>
+          <span class="tag">شهري</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">تحليل المنافسين على السوشيال</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p13">حلِّل الحضور الرقمي للمنافسين التاليين في قطاع [القطاع]:
+
+المنافسون:
+1. [اسم المنافس 1] - [رابط أو وصف]
+2. [اسم المنافس 2] - [رابط أو وصف]
+3. [اسم المنافس 3] - [رابط أو وصف]
+
+المطلوب تحليله:
+- نوع المحتوى الأكثر تفاعلاً
+- التكرار والتوقيت
+- نبرة الصوت والهوية البصرية
+- نقاط القوة والضعف لكل منافس
+- الفرص الغير مستغلة في السوق
+- 5 توصيات استراتيجية لتميّزك عنهم
+
+أخرج النتائج في جدول مقارنة + ملخص تنفيذي.<button class="copy-btn" onclick="copyText('p13', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">تحليل</span>
+          <span class="tag">منافسون</span>
+          <span class="tag">استراتيجية</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-header" onclick="toggle(this)">
+        <div class="prompt-title">بيوغرافي احترافي لجميع المنصات</div>
+        <div class="prompt-toggle">▼</div>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text" id="p14">اكتب بيوغرافي احترافي لحسابات التواصل الاجتماعي.
+
+المعلومات:
+- الاسم/الشركة: [الاسم]
+- المجال: [المجال/التخصص]
+- الإنجازات البارزة: [الإنجازات]
+- القيم الجوهرية: [القيم]
+- الجمهور المستهدف: [الجمهور]
+- CTA المطلوب: [ما تريد أن يفعله الزوار]
+
+اكتب نسخة مُحسَّنة لكل منصة:
+- انستغرام: 150 حرف
+- تويتر X: 160 حرف
+- لينكدإن: 300 كلمة (ملف احترافي كامل)
+- تيك توك: 80 حرف + إيموجيات مناسبة<button class="copy-btn" onclick="copyText('p14', this)">نسخ</button></div>
+        <div class="prompt-meta">
+          <span class="tag">bio</span>
+          <span class="tag">هوية</span>
+          <span class="tag">سهل</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>هل تريد ذكاء اصطناعي مُخصَّص لعملك؟</h2>
+    <p>Bayen AI تبني روبوتات محادثة ذكية وأدوات ذكاء اصطناعي مُحسَّنة للسوق الخليجي والعربي</p>
+    <a href="https://bayenai.com" class="cta-btn" target="_blank" rel="noopener">
+      زر Bayen AI ←
+    </a>
+    <div class="cta-features">
+      <div class="cta-feature">روبوتات محادثة عربية</div>
+      <div class="cta-feature">تكامل مع أنظمتك</div>
+      <div class="cta-feature">مُحسَّن للخليج</div>
+      <div class="cta-feature">دعم 24/7</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    صُنع بـ ❤️ للسوق العربي والخليجي •
+    <a href="https://bayenai.com" target="_blank" rel="noopener">bayenai.com</a> •
+    <a href="https://github.com/dahabaaly/arabic-ai-prompts" target="_blank">GitHub</a>
+  </p>
+  <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+    مفتوح المصدر تحت رخصة MIT — حر الاستخدام مع الإشارة للمصدر
+  </p>
+</footer>
+
+<script>
+  function toggle(header) {
+    const card = header.parentElement;
+    card.classList.toggle('open');
+  }
+
+  function copyText(id, btn) {
+    const el = document.getElementById(id);
+    const clone = el.cloneNode(true);
+    clone.querySelector('.copy-btn')?.remove();
+    const text = clone.innerText.trim();
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ تم النسخ';
+      btn.style.background = 'var(--green)';
+      btn.style.borderColor = 'var(--green)';
+      btn.style.color = '#0d1117';
+      setTimeout(() => {
+        btn.textContent = 'نسخ';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.style.color = '';
+      }, 2000);
+    });
+  }
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Set active category button on scroll
+  const sections = ['customer','gbp','clinic','restaurant','hr','social'];
+  const buttons = document.querySelectorAll('.cat-btn');
+  
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 200) current = id;
+    });
+    buttons.forEach((btn, i) => {
+      btn.classList.toggle('active', sections[i] === current);
+    });
+  });
+</script>
+
+</body>
+</html>
